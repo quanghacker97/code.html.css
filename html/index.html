@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<title>KanIT</title>
+	<meta name="description" content="Web quản lý bán hàng"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="app.css">
+
+</head>
+
+<body>
+	<!--===========BODY============-->	
+	<!--==========topmenu-1= .navbar ==== Header =======-->
+
+	<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+		<a class="navbar-brand mr-auto mr-lg-0" href="index.html">
+			<!--===========LOGO==============-->
+			<img title="KanIT" id="logotop" src="LOGO.png">
+		</a>
+		<button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html"><i class="fa fa-spinner fa-pulse"></i> Trang chủ<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="far fa-bell"></i> Thông báo</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Chi nhánh trung tâm</a>
+				</li>
+				<!--===THIẾT LẬP===-->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="thietlap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog fa-spin" ></i> Thiết lập</a>
+					<div class="dropdown-menu" aria-labelledby="thietlap">
+						<a class="dropdown-item" href="#">Thiết lập cửa hàng</a>
+						<a class="dropdown-item" href="#">Quản lý mẫu in</a>
+						<a class="dropdown-item" href="#">Quản lý người dùng</a>
+						<a class="dropdown-item" href="#">Quản lý chi nhánh</a>
+						<a class="dropdown-item" href="#">Lịch sử thao tác</a>
+						<a class="dropdown-item" href="#">Xóa dữ liệu dùng thử</a>
+					</div>
+				</li>
+				<!--===TÀI KHOẢN===-->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="taikhoan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-address-book"></i> Tài khoản</a>
+					<div class="dropdown-menu" aria-labelledby="taikhoan">
+						<a class="dropdown-item" href="#">Thông tin</a>
+						<a class="dropdown-item" href="#">Đăng xuất</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!--==========topmenu-2= .nav ===========-->
+	<div class="nav-scroller bg-white shadow-sm">
+		<nav class="nav nav-underline">
+			<div class="dropdown">
+				<button class="btn"><a class="soquy" href="index.html"><strong><i class="fas fa-bullseye fa-pulse"></i> Tổng quan</strong></a></button>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-dice-d6"></i> Hàng hóa</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="hanghoa.danhmuc.html">Danh mục</a>
+					<a class="dropdown-item" href="hanghoa.thietlapgia.html">Thiết lập giá</a>
+					<a class="dropdown-item" href="hanghoa.kiemkho.html">Kiểm kho</a>
+				</div>
+			</div>
+
+			<div class="dropdown">	
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-balance-scale"></i> Giao dịch</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Hóa đơn</a>
+					<a class="dropdown-item" href="#">Trả hàng</a>
+					<a class="dropdown-item" href="#">Nhập hàng</a>
+					<a class="dropdown-item" href="#">Trả hàng nhập</a>
+					<a class="dropdown-item" href="#">Xuất hủy</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends"></i> Đối tác</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Khách hàng</a>
+					<a class="dropdown-item" href="#">Nhà cung cấp</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="btn"><a class="soquy" href="#"><i class="fas fa-dollar-sign"></i> Sổ quỹ</a></button>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chart-line"></i> Báo cáo</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Trong ngày</a>
+					<a class="dropdown-item" href="#">Bán hàng</a>
+					<a class="dropdown-item" href="#">Đặt hàng</a>
+					<a class="dropdown-item" href="#">Hàng hóa</a>
+					<a class="dropdown-item" href="#">Khách hàng</a>
+					<a class="dropdown-item" href="#">Nhà cung cấp</a>
+					<a class="dropdown-item" href="#">Nhân viên</a>
+					<a class="dropdown-item" href="#">Kênh bán hàng</a>
+					<a class="dropdown-item" href="#">Tài chính</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cart-arrow-down"></i> QL Bán hàng</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Đơn hàng</a>
+					<a class="dropdown-item" href="#">Khách hàng - CTV</a>
+					<a class="dropdown-item" href="#">Giao hàng</a>
+					<a class="dropdown-item" href="#">Nhân viên</a>
+					<a class="dropdown-item" href="#">Sản phẩm</a>
+				</div>
+			</div>
+
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Nhập từ khóa" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" id="timkiem" type="submit">Tìm kiếm</button>
+			</form>
+		</div>
+	</nav>
+
+</div>
+<!--=============Khối Tổng quan kết quả==============-->
+<div class="thongke" >
+	<div class="thongke" id="hoadon">Số hóa đơn</div>
+	<div class="thongke" id="phieu">Số phiếu trả hàng</div>
+	<div class="thongke" id="sosanh">So sánh với tháng trước</div>
+	
+</div>
+
+<!--=============Khối Chart===id="bieudodoanhthuthang"===========-->
+<div class="chart" id="bieudodoanhthuthang">
+	<i class="fas fa-dollar-sign"></i><strong> DOANH THU THÁNG NÀY</strong>
+	<canvas id="myChart"></canvas>
+</div>
+<script>
+	var ctx = document.getElementById('myChart');
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ['01', '03', '05', '07', '09', '12'],
+			datasets: [{
+				label: 'Doanh thu',
+				data: [12, 19, 3, 5, 2, 3],
+				backgroundColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(255, 206, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(255, 159, 64, 0.2)'
+				],
+				borderColor: [
+				'rgba(255, 99, 132, 1)',
+				'rgba(54, 162, 235, 1)',
+				'rgba(255, 206, 86, 1)',
+				'rgba(75, 192, 192, 1)',
+				'rgba(153, 102, 255, 1)',
+				'rgba(255, 159, 64, 1)'
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!--=============Khối Chart===id="topspbanchay"===========-->
+<div class="chart" id="topspbanchay">
+	<i class="fas fa-cart-arrow-down"></i><strong> TOP 10 SẢN PHẨM BÁN CHẠY</strong>
+	<canvas id="myChart1"></canvas>
+</div>
+<script>
+	var ctx = document.getElementById('myChart1').getContext('2d');
+	var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+    	labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    	datasets: [{
+    		label: 'Doanh thu',
+    		backgroundColor: 'rgb(255, 99, 132)',
+    		borderColor: 'rgb(255, 99, 132)',
+    		data: [0, 10, 5, 2, 20, 30, 45]
+    	}]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+<!--=============Khối SideBar===========-->
+<div class="sidebar">
+	<div class="map"><center><i>Tìm chúng tôi qua Google Map</i></center>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.0379882000207!2d105.84244561476189!3d20.991114294438674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac6ec5768343%3A0x1d8379759a92e046!2zTmd1eeG7hW4gQW4gTmluaCwgSG_DoG5nIE1haSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1553456849834" width="260" height="72" frameborder="0" style="border:0" allowfullscreen></iframe>
+	
+	</div>
+	<div class="hoatdong" id=""><strong>CÁC HOẠT ĐỘNG GẦN ĐÂY</strong>
+		<div class="jumbotron">
+			<h1 class="display-4">Hello, world!</h1>
+			<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+			<hr class="my-4">
+			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</div>
+	</div>
+</div>
+	<!--=============footer==============-->
+
+	<!--JS-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
